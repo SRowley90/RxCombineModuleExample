@@ -9,10 +9,11 @@ import Foundation
 import Alamofire
 import RxSwift
 import RxAlamofire
+import Auth
 
 protocol SessionManagerProtocol {
     var emptyBodyResponseCodes: Set<Int> { get }
-    func request(for endpoint: Endpoint, in environment: Environment, with parameters: [String: Any], and additionalHeaders: [String: String]) -> Single<(HTTPURLResponse, Data)>
+    func request(for endpoint: EndpointProtocol, in environment: Environment, with parameters: [String: Any], and additionalHeaders: [String: String]) -> Single<(HTTPURLResponse, Data)>
 }
 
 extension Alamofire.Session: SessionManagerProtocol {
@@ -28,25 +29,48 @@ extension Alamofire.Session: SessionManagerProtocol {
         return HTTPHeaders(totalHeaders)
     }
     
-    func request(for endpoint: Endpoint, in environment: Environment, with parameters: [String: Any], and additionalHeaders: [String: String]) -> Single<(HTTPURLResponse, Data)> {
+    func request(for endpoint: EndpointProtocol, in environment: Environment, with parameters: [String: Any], and additionalHeaders: [String: String]) -> Single<(HTTPURLResponse, Data)> {
         
         let dataResponseSerializer = DataResponseSerializer(emptyResponseCodes: emptyBodyResponseCodes)
         
         do {
-            let allHeaders = mergeHeaders(this: additionalHeaders, to: endpoint.headers)
+            let allHeaders = mergeHeaders(this: additionalHeaders, to: [:])
 
             var originalRequest = try URLRequest(url: try environment.url(for: endpoint),
-                                                 method: endpoint.method,
+                                                 method: endpoint.alamofireMethod,
                                                  headers: allHeaders)
             originalRequest.timeoutInterval = endpoint.timeoutInterval
 
-            let encodedURLRequest = try endpoint.parameterEncoding.encode(originalRequest, with: parameters)
+            let encodedURLRequest = try endpoint.alamofireEncoding.encode(originalRequest, with: parameters)
             return rx.request(urlRequest: encodedURLRequest)
                 .responseData(dataResponseSerializer: dataResponseSerializer)
                 .asSingle()
 
         } catch {
             return .error(error)
+        }
+    }
+    
+    private func getAlamofireEncodingFromEndpointMethod(_ encoding: AuthEncoding) -> ParameterEncoding {
+        switch encoding {
+            case .url:
+                return URLEncoding.default
+        }
+    }
+}
+
+extension EndpointProtocol {
+    var alamofireMethod: HTTPMethod {
+        switch self.method {
+        case .get:
+            return HTTPMethod.get
+        }
+    }
+    
+    var alamofireEncoding: ParameterEncoding {
+        switch self.parameterEncoding {
+        case .url:
+            return URLEncoding.default
         }
     }
 }

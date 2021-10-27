@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Auth
 
 enum Error: Swift.Error {
     case unableToConstructURL(URL, String)
@@ -14,11 +15,11 @@ enum Error: Swift.Error {
 enum Environment {
     case debug
     
-    private func baseURL(for endpoint: Endpoint) -> URL {
+    private func baseURL(for endpoint: EndpointProtocol) -> URL {
         return URL(string: "https://jsonplaceholder.typicode.com/")!
     }
     
-    func url(for endpoint: Endpoint) throws -> URL {
+    func url(for endpoint: EndpointProtocol) throws -> URL {
         let baseURL = self.baseURL(for: endpoint)
         let path = endpoint.path
         guard let components = URLComponents(string: path),

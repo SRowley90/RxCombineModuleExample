@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		551907EC27295369005D658D /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551907EB27295369005D658D /* Endpoint.swift */; };
 		551907EF272953C4005D658D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551907EE272953C4005D658D /* Post.swift */; };
 		551907F127295516005D658D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551907F027295516005D658D /* Comment.swift */; };
+		5519080C27299ADD005D658D /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 5519080B27299ADD005D658D /* Auth */; };
 		557B669027204AA9007085B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B668F27204AA9007085B1 /* AppDelegate.swift */; };
 		557B669227204AA9007085B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B669127204AA9007085B1 /* SceneDelegate.swift */; };
 		557B669427204AA9007085B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B669327204AA9007085B1 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 		551907EB27295369005D658D /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		551907EE272953C4005D658D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		551907F027295516005D658D /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		5519080A27299AA4005D658D /* Auth */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Auth; path = Modules/Auth; sourceTree = "<group>"; };
 		557B668C27204AA9007085B1 /* RxCombineModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxCombineModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557B668F27204AA9007085B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		557B669127204AA9007085B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5519080C27299ADD005D658D /* Auth in Frameworks */,
 				232F2222709489D8AE87E080 /* Pods_RxCombineModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -87,6 +90,7 @@
 		557B668327204AA9007085B1 = {
 			isa = PBXGroup;
 			children = (
+				5519080A27299AA4005D658D /* Auth */,
 				557B668E27204AA9007085B1 /* RxCombineModule */,
 				557B668D27204AA9007085B1 /* Products */,
 				1077E743D1E3BEC8763A5DC2 /* Pods */,
@@ -146,6 +150,9 @@
 			dependencies = (
 			);
 			name = RxCombineModule;
+			packageProductDependencies = (
+				5519080B27299ADD005D658D /* Auth */,
+			);
 			productName = RxCombineModule;
 			productReference = 557B668C27204AA9007085B1 /* RxCombineModule.app */;
 			productType = "com.apple.product-type.application";
@@ -455,6 +462,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		5519080B27299ADD005D658D /* Auth */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Auth;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 557B668427204AA9007085B1 /* Project object */;
 }

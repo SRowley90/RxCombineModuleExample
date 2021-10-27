@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import RxSwift
 import SwiftyJSON
+import Auth
 
 class ViewController: UIViewController {
     
@@ -30,7 +31,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.largeTitleDisplayMode = .always
         self.title = "Posts"

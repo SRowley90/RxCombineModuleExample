@@ -7,16 +7,13 @@
 
 import Foundation
 import Alamofire
+import Auth
 
-enum Endpoint {
+enum Endpoint: EndpointProtocol {
     case posts
     case comments(postId: Int)
     
-    var headers: HTTPHeaders {
-        return HTTPHeaders([:])
-    }
-    
-    var method: HTTPMethod {
+    var method: URLMethod {
         return .get
     }
     
@@ -29,8 +26,8 @@ enum Endpoint {
         }
     }
     
-    var parameterEncoding: ParameterEncoding {
-        return URLEncoding.default
+    var parameterEncoding: AuthEncoding {
+        return .url
     }
     
     var timeoutInterval: TimeInterval {
