@@ -14,6 +14,7 @@
 		551907EF272953C4005D658D /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551907EE272953C4005D658D /* Post.swift */; };
 		551907F127295516005D658D /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551907F027295516005D658D /* Comment.swift */; };
 		5519080C27299ADD005D658D /* Auth in Frameworks */ = {isa = PBXBuildFile; productRef = 5519080B27299ADD005D658D /* Auth */; };
+		5519080F2729A0FC005D658D /* Pictures in Frameworks */ = {isa = PBXBuildFile; productRef = 5519080E2729A0FC005D658D /* Pictures */; };
 		557B669027204AA9007085B1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B668F27204AA9007085B1 /* AppDelegate.swift */; };
 		557B669227204AA9007085B1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B669127204AA9007085B1 /* SceneDelegate.swift */; };
 		557B669427204AA9007085B1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B669327204AA9007085B1 /* ViewController.swift */; };
@@ -32,6 +33,7 @@
 		551907EE272953C4005D658D /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		551907F027295516005D658D /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		5519080A27299AA4005D658D /* Auth */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Auth; path = Modules/Auth; sourceTree = "<group>"; };
+		5519080D2729A0F5005D658D /* Pictures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Pictures; path = Modules/Pictures; sourceTree = "<group>"; };
 		557B668C27204AA9007085B1 /* RxCombineModule.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RxCombineModule.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		557B668F27204AA9007085B1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		557B669127204AA9007085B1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5519080F2729A0FC005D658D /* Pictures in Frameworks */,
 				5519080C27299ADD005D658D /* Auth in Frameworks */,
 				232F2222709489D8AE87E080 /* Pods_RxCombineModule.framework in Frameworks */,
 			);
@@ -90,6 +93,7 @@
 		557B668327204AA9007085B1 = {
 			isa = PBXGroup;
 			children = (
+				5519080D2729A0F5005D658D /* Pictures */,
 				5519080A27299AA4005D658D /* Auth */,
 				557B668E27204AA9007085B1 /* RxCombineModule */,
 				557B668D27204AA9007085B1 /* Products */,
@@ -152,6 +156,7 @@
 			name = RxCombineModule;
 			packageProductDependencies = (
 				5519080B27299ADD005D658D /* Auth */,
+				5519080E2729A0FC005D658D /* Pictures */,
 			);
 			productName = RxCombineModule;
 			productReference = 557B668C27204AA9007085B1 /* RxCombineModule.app */;
@@ -467,6 +472,10 @@
 		5519080B27299ADD005D658D /* Auth */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Auth;
+		};
+		5519080E2729A0FC005D658D /* Pictures */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Pictures;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

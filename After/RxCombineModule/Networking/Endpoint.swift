@@ -29,8 +29,4 @@ enum Endpoint: EndpointProtocol {
     var parameterEncoding: AuthEncoding {
         return .url
     }
-    
-    var timeoutInterval: TimeInterval {
-        return 10
-    }
 }

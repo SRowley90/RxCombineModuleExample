@@ -34,12 +34,8 @@ extension Alamofire.Session: SessionManagerProtocol {
         let dataResponseSerializer = DataResponseSerializer(emptyResponseCodes: emptyBodyResponseCodes)
         
         do {
-            let allHeaders = mergeHeaders(this: additionalHeaders, to: [:])
-
             var originalRequest = try URLRequest(url: try environment.url(for: endpoint),
-                                                 method: endpoint.alamofireMethod,
-                                                 headers: allHeaders)
-            originalRequest.timeoutInterval = endpoint.timeoutInterval
+                                                 method: endpoint.alamofireMethod)
 
             let encodedURLRequest = try endpoint.alamofireEncoding.encode(originalRequest, with: parameters)
             return rx.request(urlRequest: encodedURLRequest)
