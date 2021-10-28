@@ -23,6 +23,7 @@
 		557B669C27204AB8007085B1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 557B669A27204AB8007085B1 /* LaunchScreen.storyboard */; };
 		557B66A427204E5A007085B1 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B66A327204E5A007085B1 /* NetworkController.swift */; };
 		557B66A7272067C4007085B1 /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557B66A5272067C4007085B1 /* CommentsViewController.swift */; };
+		559D85B4272AD67E0095420E /* PicturesAPIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 559D85B3272AD67E0095420E /* PicturesAPIProvider.swift */; };
 		55D36ED12729B2A00087EDC8 /* Networking in Frameworks */ = {isa = PBXBuildFile; productRef = 55D36ED02729B2A00087EDC8 /* Networking */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +46,7 @@
 		557B669D27204AB8007085B1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		557B66A327204E5A007085B1 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		557B66A5272067C4007085B1 /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
+		559D85B3272AD67E0095420E /* PicturesAPIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicturesAPIProvider.swift; sourceTree = "<group>"; };
 		55D36ECF2729B2970087EDC8 /* Networking */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Networking; path = Modules/Networking; sourceTree = "<group>"; };
 		5818656B55AA5E1D5A5F7B22 /* Pods_RxCombineModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RxCombineModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		61CE05E321C892327A4A7C84 /* Pods-RxCombineModule.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RxCombineModule.debug.xcconfig"; path = "Target Support Files/Pods-RxCombineModule/Pods-RxCombineModule.debug.xcconfig"; sourceTree = "<group>"; };
@@ -96,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				551908112729AE99005D658D /* NetworkProvider.swift */,
+				559D85B3272AD67E0095420E /* PicturesAPIProvider.swift */,
 			);
 			path = "Module Models";
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				559D85B4272AD67E0095420E /* PicturesAPIProvider.swift in Sources */,
 				557B66A427204E5A007085B1 /* NetworkController.swift in Sources */,
 				551907E7272942AC005D658D /* AuthController.swift in Sources */,
 				551907EC27295369005D658D /* Endpoint.swift in Sources */,

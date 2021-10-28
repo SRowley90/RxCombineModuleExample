@@ -79,7 +79,8 @@ class ViewController: UIViewController {
     
     @objc func pictures(_ sender: UIBarButtonItem) {
         let networkProvider = NetworkProvider()
-        let pictureContainer = Container(networkProvider: networkProvider)
+        let apiProvider = PicturesAPIProvider(authController: authController)
+        let pictureContainer = Container(networkProvider: networkProvider, apiProvider: apiProvider)
         let picturesVC = pictureContainer.makeGMViewController()
         present(UINavigationController(rootViewController: picturesVC), animated: true, completion: nil)
     }
