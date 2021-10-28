@@ -7,7 +7,7 @@
 
 import Foundation
 import Alamofire
-import Auth
+import Networking
 
 enum Endpoint: EndpointProtocol {
     case posts

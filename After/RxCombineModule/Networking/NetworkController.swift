@@ -9,7 +9,7 @@ import Foundation
 import Alamofire
 import RxSwift
 import RxAlamofire
-import Auth
+import Networking
 
 protocol SessionManagerProtocol {
     var emptyBodyResponseCodes: Set<Int> { get }
@@ -34,10 +34,10 @@ extension Alamofire.Session: SessionManagerProtocol {
         let dataResponseSerializer = DataResponseSerializer(emptyResponseCodes: emptyBodyResponseCodes)
         
         do {
-            var originalRequest = try URLRequest(url: try environment.url(for: endpoint),
+            let request = try URLRequest(url: try environment.url(for: endpoint),
                                                  method: endpoint.alamofireMethod)
 
-            let encodedURLRequest = try endpoint.alamofireEncoding.encode(originalRequest, with: parameters)
+            let encodedURLRequest = try endpoint.alamofireEncoding.encode(request, with: parameters)
             return rx.request(urlRequest: encodedURLRequest)
                 .responseData(dataResponseSerializer: dataResponseSerializer)
                 .asSingle()

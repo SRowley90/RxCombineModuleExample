@@ -6,9 +6,9 @@
 //
 
 import Foundation
-import Auth
+import Networking
 
-enum Error: Swift.Error {
+enum EnvironmentError: Swift.Error {
     case unableToConstructURL(URL, String)
 }
 
@@ -24,7 +24,7 @@ enum Environment {
         let path = endpoint.path
         guard let components = URLComponents(string: path),
             let url = components.url(relativeTo: baseURL) else {
-                throw Error.unableToConstructURL(baseURL, path)
+                throw EnvironmentError.unableToConstructURL(baseURL, path)
         }
         return url
     }

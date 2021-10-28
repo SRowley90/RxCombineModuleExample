@@ -9,6 +9,7 @@ import UIKit
 import Alamofire
 import RxSwift
 import SwiftyJSON
+import Pictures
 
 class ViewController: UIViewController {
     
@@ -42,6 +43,9 @@ class ViewController: UIViewController {
         barButtonItem = UIBarButtonItem(image: UIImage(systemName: "lock"), style: .plain, target: self, action: #selector(self.action))
         self.navigationItem.rightBarButtonItem = barButtonItem
         
+        let leftBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "heart"), style: .plain, target: self, action: #selector(self.pictures))
+        self.navigationItem.leftBarButtonItem = leftBarButtonItem
+        
         Session.default.request(for: Endpoint.posts, in: Environment.debug, with: [:], and: [:])
             .subscribe { (response, data) in
                 let json = try! JSON(data: data)
@@ -71,6 +75,13 @@ class ViewController: UIViewController {
     
     @objc func action(_ sender: UIBarButtonItem) {
         self.authController.togglePinValid()
+    }
+    
+    @objc func pictures(_ sender: UIBarButtonItem) {
+        let networkProvider = NetworkProvider()
+        let pictureContainer = Container(networkProvider: networkProvider)
+        let picturesVC = pictureContainer.makeGMViewController()
+        present(UINavigationController(rootViewController: picturesVC), animated: true, completion: nil)
     }
 }
 
