@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="131" id="gdQ-2C-6He" customClass="PictureCell" customModule="Pictures">
+            <rect key="frame" x="0.0" y="0.0" width="509" height="124"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gdQ-2C-6He" id="wve-cb-WFE">
+                <rect key="frame" x="0.0" y="0.0" width="509" height="124"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BmO-hW-jeQ">
+                        <rect key="frame" x="12" y="12" width="100" height="100"/>
+                        <color key="backgroundColor" systemColor="systemGray4Color"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="100" id="lWC-zg-ZOq"/>
+                            <constraint firstAttribute="width" secondItem="BmO-hW-jeQ" secondAttribute="height" id="rTb-4a-ugZ"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvC-bj-UeW">
+                        <rect key="frame" x="124" y="52" width="373" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="BmO-hW-jeQ" secondAttribute="bottom" constant="12" id="Ypj-QN-YAf"/>
+                    <constraint firstItem="BmO-hW-jeQ" firstAttribute="top" secondItem="wve-cb-WFE" secondAttribute="top" constant="12" id="YxD-uE-XN9"/>
+                    <constraint firstItem="BmO-hW-jeQ" firstAttribute="leading" secondItem="wve-cb-WFE" secondAttribute="leading" constant="12" id="hMb-fy-ruK"/>
+                    <constraint firstAttribute="trailing" secondItem="SvC-bj-UeW" secondAttribute="trailing" constant="12" id="poI-8a-4Sp"/>
+                    <constraint firstItem="SvC-bj-UeW" firstAttribute="centerY" secondItem="wve-cb-WFE" secondAttribute="centerY" id="wqT-5U-yTo"/>
+                    <constraint firstItem="SvC-bj-UeW" firstAttribute="leading" secondItem="BmO-hW-jeQ" secondAttribute="trailing" constant="12" id="z77-k6-Na4"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="pictureThumbnail" destination="BmO-hW-jeQ" id="xQx-XA-9M6"/>
+                <outlet property="titleLabel" destination="SvC-bj-UeW" id="ah3-b3-aDB"/>
+            </connections>
+            <point key="canvasLocation" x="23.913043478260871" y="-315.06696428571428"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

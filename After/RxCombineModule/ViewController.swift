@@ -81,7 +81,7 @@ class ViewController: UIViewController {
         let networkProvider = NetworkProvider()
         let apiProvider = PicturesAPIProvider(authController: authController)
         let pictureContainer = Container(networkProvider: networkProvider, apiProvider: apiProvider)
-        let picturesVC = pictureContainer.makeGMViewController()
+        let picturesVC = pictureContainer.makePhotosViewController()
         present(UINavigationController(rootViewController: picturesVC), animated: true, completion: nil)
     }
 }
