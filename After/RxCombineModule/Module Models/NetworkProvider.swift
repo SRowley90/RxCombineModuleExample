@@ -21,7 +21,7 @@ struct NetworkProvider: NetworkProviding {
                     .subscribe{ response in
                         promise(.success(response))
                     } onFailure: { error in
-                        promise(.failure(error as! Error))
+                        promise(.failure(error))
                     } .disposed(by: self.disposeBag)
             }
         }.eraseToAnyPublisher()

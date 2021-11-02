@@ -18,12 +18,12 @@ public struct Container {
     public init(networkProvider: NetworkProviding, apiProvider: PicturesAPIProviding) {
         self.networkProvider = networkProvider
         self.apiProvider = apiProvider
-        self.picturesRepository = PictureRepository(apiProvider: apiProvider, pictureService: PictureService(networkProvider: networkProvider))
+        self.picturesRepository = PictureRepository(apiProvider: apiProvider, pictureService: PictureService(networkProvider: networkProvider)) // Service here isn't great and not testable as is the Repository, for demo it's ok.
     }
     
     public func makePhotosViewController() -> PictureViewController {
         let viewModel = makePhotosViewModel()
-        return  PictureViewController(networkProvider: networkProvider, apiProvider: apiProvider, viewModel: viewModel)
+        return PictureViewController(networkProvider: networkProvider, apiProvider: apiProvider, viewModel: viewModel)
     }
 
     private func makePhotosViewModel() -> PicturesViewModel {
